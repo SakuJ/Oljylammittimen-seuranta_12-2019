@@ -30,7 +30,7 @@ namespace oljypoltin2
             Stopwatch timer = new Stopwatch();
 
             //Lokitiedoston polku .txt
-            string path = @"C:\Users\sakuj\source\repos\oljypoltin2\Testi.txt";
+            string path = @"C:\Users\sakuj\source\repos\oljypoltin2\Loki.txt";
 
             while (true)
             {
