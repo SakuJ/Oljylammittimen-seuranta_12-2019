@@ -35,7 +35,7 @@ namespace oljypoltin2
 
             while (true)
             {
-                Thread.Sleep(1000);
+                //Thread.Sleep(1000);
 
                 string in_data = myport.ReadLine();
 
