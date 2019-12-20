@@ -4,3 +4,10 @@ C:\Users\sakuj\source\repos\oljypoltin2\oljypoltin2\bin\Debug\oljypoltin2.pdb
 C:\Users\sakuj\source\repos\oljypoltin2\oljypoltin2\obj\Debug\oljypoltin2.csprojAssemblyReference.cache
 C:\Users\sakuj\source\repos\oljypoltin2\oljypoltin2\obj\Debug\oljypoltin2.exe
 C:\Users\sakuj\source\repos\oljypoltin2\oljypoltin2\obj\Debug\oljypoltin2.pdb
+C:\Users\Saku\Documents\GitHub\SakuJ-Oljylammittimen-seuranta_12-2019\oljypoltin2\bin\Debug\oljypoltin2.exe.config
+C:\Users\Saku\Documents\GitHub\SakuJ-Oljylammittimen-seuranta_12-2019\oljypoltin2\bin\Debug\oljypoltin2.exe
+C:\Users\Saku\Documents\GitHub\SakuJ-Oljylammittimen-seuranta_12-2019\oljypoltin2\bin\Debug\oljypoltin2.pdb
+C:\Users\Saku\Documents\GitHub\SakuJ-Oljylammittimen-seuranta_12-2019\oljypoltin2\obj\Debug\oljypoltin2.csprojAssemblyReference.cache
+C:\Users\Saku\Documents\GitHub\SakuJ-Oljylammittimen-seuranta_12-2019\oljypoltin2\obj\Debug\oljypoltin2.csproj.CoreCompileInputs.cache
+C:\Users\Saku\Documents\GitHub\SakuJ-Oljylammittimen-seuranta_12-2019\oljypoltin2\obj\Debug\oljypoltin2.exe
+C:\Users\Saku\Documents\GitHub\SakuJ-Oljylammittimen-seuranta_12-2019\oljypoltin2\obj\Debug\oljypoltin2.pdb
