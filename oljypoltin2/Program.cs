@@ -31,7 +31,7 @@ namespace oljypoltin2
             Stopwatch timer = new Stopwatch();
 
             //Lokitiedoston polku .txt
-            string path = @"C:\SakuJ-Oljylammittimen-seuranta_12-2019\Loki.txt";
+            string path = @"D:\SakuJ-Oljylammittimen-seuranta_12-2019-master\Loki.txt";
 
             while (true)
             {
@@ -55,7 +55,7 @@ namespace oljypoltin2
                     timer.Stop();
                     TimeSpan ts = timer.Elapsed;
                     string elapsedTime = string.Format("{0:00}:{1:00}:{2:00}", ts.Hours, ts.Minutes, ts.Seconds);
-                    float kulutus = (ts.Seconds / 3600f) * 4f;
+                    float kulutus = ts.Hours * 4f;
                     
                     string appendText = DateTime.Now.ToString() + "Päälläoloaika: " + elapsedTime + "  Kokonaiskulutus: " + kulutus + " Litraa" + Environment.NewLine;
                     File.AppendAllText(path, appendText);
