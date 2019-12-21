@@ -23,12 +23,14 @@ namespace oljypoltin2
         static void Main(string[] args)
         {
             int lukitus = 0;
-
+            float kulutus = 0;
             //Sarjaportin määritys
-            myport = new SerialPort("COM3", 9600, Parity.None, 8, StopBits.One);
+            myport = new SerialPort("COM4", 9600, Parity.None, 8, StopBits.One);
             myport.Open();
             
             Stopwatch timer = new Stopwatch();
+            Stopwatch timer2 = new Stopwatch();
+            Stopwatch timer3 = new Stopwatch();
 
             //Lokitiedoston polku .txt
             string path = @"C:\SakuJ-Oljylammittimen-seuranta_12-2019-master\Loki.txt";
@@ -43,9 +45,16 @@ namespace oljypoltin2
 
                 if (lukitus == 0 && data == 1)
                 {
-                    string appendText = DateTime.Now.ToString() + " PÄÄLLE " ;
+                    timer3.Stop();
+                    TimeSpan ts3 = timer3.Elapsed;
+
+                    string appendText = DateTime.Now.ToString() + "  Väli: " + ts3 ;
                     File.AppendAllText(path, appendText);
+
                     timer.Start();
+                    timer2.Start();
+
+                    
 
                     lukitus = 1;
                 }
@@ -53,12 +62,33 @@ namespace oljypoltin2
                 if(lukitus == 1 && data == 0)
                 {
                     timer.Stop();
+                    timer2.Stop();
+
+                    timer3.Reset();
+                    timer3.Start();
+
                     TimeSpan ts = timer.Elapsed;
+                    TimeSpan ts2 = timer2.Elapsed;
+
                     string elapsedTime = string.Format("{0:00}:{1:00}:{2:00}", ts.Hours, ts.Minutes, ts.Seconds);
-                    float kulutus = ts.Hours * 4f;
                     
-                    string appendText = DateTime.Now.ToString() + "Päälläoloaika: " + elapsedTime + "  Kokonaiskulutus: " + kulutus + " Litraa" + Environment.NewLine;
+                    if(ts.Days > 0)
+                    {
+                        kulutus = (((ts.Days * 24) + ts.Hours) + (ts.Minutes / 60)) * 4f;
+                    }
+                    else if(ts.Hours > 0)
+                    {
+                        kulutus = (ts.Hours + (ts.Minutes / 60)) * 4f;
+                    }
+                    else
+                    {
+                        kulutus = (ts.Minutes / 60) * 4f;
+                    }
+                    
+                    string appendText = "  Kesto: " + ts2 + "  Kok.Kesto: " + elapsedTime + "   Kulutus: " + kulutus + Environment.NewLine;
                     File.AppendAllText(path, appendText);
+
+                    timer2.Reset();
 
                     lukitus = 0;
                 }

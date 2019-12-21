@@ -21,6 +21,7 @@ void loop()
 {
 
   StatoSwitch = digitalRead(pinSwitch);
+  delay(1000);
   
   if (StatoSwitch == HIGH)
   
