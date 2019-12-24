@@ -40,21 +40,26 @@ namespace oljypoltin2
                 //Thread.Sleep(1000);
 
                 string in_data = myport.ReadLine();
+                string[] c = myport.ReadLine().Split(',');
 
-                if (!int.TryParse(in_data, out int data)) ;
+                string cee1 = c[0];
+                string cee2 = c[1];
+
+                int data = int.Parse(c[0]);
+
+                Console.WriteLine(c[1]);
 
                 if (lukitus == 0 && data == 1)
                 {
                     timer3.Stop();
                     TimeSpan ts3 = timer3.Elapsed;
 
-                    string appendText = DateTime.Now.ToString() + "  Väli: " + ts3 ;
+                    string appendText = c[1] + "  " + DateTime.Now.ToString() + "  Väli: " + ts3 ;
                     File.AppendAllText(path, appendText);
 
                     timer.Start();
                     timer2.Start();
 
-                    
 
                     lukitus = 1;
                 }
@@ -85,7 +90,7 @@ namespace oljypoltin2
                         kulutus = (ts.Minutes / 60) * 4f;
                     }
                     
-                    string appendText = "  Kesto: " + ts2 + "  Kok.Kesto: " + elapsedTime + "   Kulutus: " + kulutus + Environment.NewLine;
+                    string appendText = "  Kesto: " + ts2 + "  Kok.Kesto: " + elapsedTime + "   Kulutus: " + kulutus + "  " + c[1] + Environment.NewLine;
                     File.AppendAllText(path, appendText);
 
                     timer2.Reset();
