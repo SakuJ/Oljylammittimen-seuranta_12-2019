@@ -25,7 +25,7 @@ namespace oljypoltin2
             int lukitus = 0;
             float kulutus = 0;
             //Sarjaportin määritys
-            myport = new SerialPort("COM3", 9600, Parity.None, 8, StopBits.One);
+            myport = new SerialPort("COM4", 9600, Parity.None, 8, StopBits.One);
             myport.Open();
             
             Stopwatch timer = new Stopwatch();
